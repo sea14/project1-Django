@@ -2,5 +2,7 @@
 from django.shortcuts import render
 
 def home(request):
-	context = {'message': 'This is a dynamic message variable!'}
+	context = {
+		'member_count': Member.objects.count(),
+	}
 	return render(request, "base.html", context)
